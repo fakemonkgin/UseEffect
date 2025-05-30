@@ -19,7 +19,7 @@ useEffect(() => {
     async function fetchUser() {
         try{
         const res = await fetch('https://jsonplaceholder.typicode.com/users');
-        if(!res.ok) return new Error("Connection error!");
+        if(!res.ok) throw new Error("Connection error!");
         const data = await res.json();
         setUsers(data);
         } catch(e) {
